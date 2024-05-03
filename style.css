@@ -4,77 +4,65 @@
     box-sizing: border-box;
 }
 
-
 :root {
     --hue: 10;
     --bg-color: lightgray;
-    --Platform-Aliases-Ttulos: #ffffff;
-    --Neutral-Colors-White: #FFF;
-    --bg-button: #FFF;
-    --Platform-Aliases-Texto-base: #ffffff;
-
-    font-size: clamp(20%, 1% + 2vw, 62.5%);
+    --title-color: #ffffff;
+    --text-color: #ffffff;
+    --button-bg: #ffffff;
+    --button-text-color: #000000;
+    --button-border-color: var(--button-bg); /* Separate button border color */
 }
 
-body{
-    width: 128rem;
-    height: 72rem;
-    flex-shrink: 0;
-
-    display: grid;
+body {
+    width: 100vw;
     height: 100vh;
-    place-content: center;
-
+    display: grid;
+    place-items: center;
     background: url('./assets/background.jpg') var(--bg-color) 50% / cover no-repeat;
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-position: center;
     transition: background-image 0.5s ease;
 }
 
 #app {
     display: grid;
     justify-items: center;
-    
     gap: 2.5rem;
 }
 
-h1{
-    color: var(--Platform-Aliases-Ttulos);
+h1 {
+    color: var(--title-color);
     font-family: Roboto;
-    font-size: 4.8rem;
-    font-weight: 70rem;
-    
-    text-align: start;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05926120448179273) 35%, rgba(204,204,204,1) 100%);
-    border-radius: 5%;
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 1rem;
 }
 
-button{
+button {
+    border: .2rem solid var(--button-border-color); /* Use separate variable for button border color */
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
     border-radius: .5rem;
-    border: .2rem solid #FFF;
-
-    display: inline-flex;
     padding: 1.2rem 3.2rem;
-    justify-content: center;
-    align-items: center;
-    gap: .3rem;
-
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-p{
-    color: var(--Platform-Aliases-Ttulos);
+button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+p {
+    color: var(--text-color);
     font-family: Roboto;
-    font-size: 1.8rem;
-    font-style: normal;
-    font-weight: 20rem;
-    line-height: 160%; /* 28.8px */
-    padding: 3rem 3rem 3rem 3rem;
-    margin-left: 20rem;
-    background-color: #b8b8b8af; 
+    font-size: 1.2rem;
+    text-align: center;
+
+    padding: 3rem;
     border-radius: 1.5%;
+
+    max-width: 30rem;
+    margin: 0 auto;
 }
 
 nav {
@@ -82,45 +70,22 @@ nav {
     top: 7.0rem;
     left: 17rem;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0);
     z-index: 999;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 20px; /* Adiciona espaço interno para os links */
+    padding: 20px; /* Add internal space for links */
 }
 
 nav a {
     text-decoration: none;
-    color: var(--Neutral-Colors-White);
+    color: var(--title-color);
     font-family: Roboto;
-    font-size: 24px;
-    font-weight: 700;
-    margin-right: 20px;
-}
-
-/* Estilos para as tags <h1> */
-h1 {
-    text-align: left;
-}
-
-/* Estilos específicos para a primeira página */
-body:first-of-type h1 {
-    text-align: center;
-}
-
-h1 {
-    text-align: left;
-}
-
-body:first-of-type h1 {
-    text-align: center; 
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: var(--Platform-Aliases-Texto-base);
-    font-family: Roboto;
-    font-size: 2.1rem;
-    font-weight: 40rem;
-    line-height: 2.1rem; 
 }
