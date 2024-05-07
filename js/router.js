@@ -21,7 +21,20 @@ export class Router {
     .then(data => data.text())
     .then(html => {
       document.querySelector('#app').innerHTML = html
+      document.body.style.backgroundImage = this.getBackgroundImage(pathname);
     })
   }
+
+  getBackgroundImage(pathname) {
+    switch(pathname) {
+        case '/universe':
+            return 'url("../assets/background2.jpg")';
+        case '/exploration':
+            return 'url("../assets/background3.jpg")'; 
+        default:
+            return 'url("../assets/background1.jpg")';
+      }
+  }
+
 
 }

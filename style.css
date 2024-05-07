@@ -12,6 +12,7 @@
     --button-bg: #ffffff;
     --button-text-color: #000000;
     --button-border-color: var(--button-bg); /* Separate button border color */
+    
 }
 
 body {
@@ -25,19 +26,18 @@ body {
 
 #app {
     display: grid;
-    justify-items: center;
+    justify-items: start;
     gap: 2.5rem;
 }
 
-h1 {
+h1, p, a {
     color: var(--title-color);
     font-family: Roboto;
-    font-size: 2.2rem;
-    text-align: center;
+    text-align: left;
     padding: 1rem;
 }
 
-button {
+#button {
     border: .2rem solid var(--button-border-color); /* Use separate variable for button border color */
     background-color: var(--button-bg);
     color: var(--button-text-color);
@@ -47,22 +47,20 @@ button {
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover {
-    background-color: #000000;
-    color: #ffffff;
+#button:hover{
+    background-color: var(--button-text-color);
+    border-color:  var(--button-text-color);
+    color: var(--button-bg);
+}
+
+a {
+    text-decoration: none; /* no underline */
+    margin-left: 2.2rem;
 }
 
 p {
-    color: var(--text-color);
-    font-family: Roboto;
-    font-size: 1.2rem;
-    text-align: center;
-
-    padding: 3rem;
-    border-radius: 1.5%;
-
-    max-width: 30rem;
-    margin: 0 auto;
+    max-width: 50rem;
+    margin-right: 0; /* Reset margin for paragraphs */
 }
 
 nav {
